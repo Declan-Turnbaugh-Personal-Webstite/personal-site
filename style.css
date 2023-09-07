@@ -1,0 +1,21 @@
+:root {
+    --background: #121212;
+    --header-bar: #181818;
+    --primary-text: #ffffff;
+    --secondary-text: #b3b3b3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background);
+}
+
+.app-header {
+    display: flex;
+    padding: 16px;
+    gap: 12px;
+    background-color: var(--header-bar);
+}
