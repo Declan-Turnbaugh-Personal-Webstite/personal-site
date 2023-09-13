@@ -49,6 +49,19 @@
     background-color: var(--header-hover);
 }
 
+.body-contain{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.text-contain{
+    margin-left: 100px;
+    padding-left: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
+}
 
 h1.container{
     width: 100%;
