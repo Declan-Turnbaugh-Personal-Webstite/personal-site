@@ -1,32 +1,100 @@
-* {
-    box-sizing: border-box;
-    letter-spacing: 1px;
-    font-family: 'Source Sans Pro Topnav', sans-serif;
-    white-space: nowrap;
-}
-
-body{
-    background-color: var(--background);
-}
-
-.header-container{
+.head-index{
     position: fixed;
-    left: 0;
+    z-index: 1000;
     top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 16px;
     background-color: var(--header-bar);
 }
 
-a{
-    display: inline-block;
-    width: auto;
+.nav-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px;
+    margin: 20px auto 0;
+    position: relative;
+    z-index: 1000;
+    
+}
+
+.ul-index{
+    display: flex;
+    list-style-type: none;
     margin: 0;
-    padding: 5px 15px 5px 15px;
-    font-size: 16px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.li-index{
+    display: flex;
+    position: relative;
+}
+
+.a-index{
+    padding-right: 15px;
+    margin: 0 5px;
+    padding: 6px 20px;
+    border-radius: 24px;
     text-decoration: none;
-    line-height: 1.5;
     color: var(--primary-text);
-    background-color: transparent;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.a-index:hover{
+    transition: 0.25s ease;
+    background-color: var(--header-hover);
+}
+
+
+h1.container{
+    width: 100%;
+    max-width: 960px;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 180px;
+    display: block;
+    position: relative;
+}
+
+p.container{
+    width: 100%;
+    max-width: 960px;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+*{
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body{
+    font-family: 'Source Sans Pro Topnav', sans-serif;
+    font-size: 16px;
+    color: var(--primary-text);
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+h1{
+    letter-spacing: 0;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 88px;
 }
 
 :root {
