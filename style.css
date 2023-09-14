@@ -1,0 +1,142 @@
+.head-index{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 16px;
+    background-color: var(--header-bar);
+}
+
+.nav-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px;
+    margin: 20px auto 0;
+    position: relative;
+    z-index: 1000;
+    
+}
+
+.ul-index{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.li-index{
+    display: flex;
+    position: relative;
+}
+
+.a-index{
+    padding-right: 15px;
+    margin: 0 5px;
+    padding: 6px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    color: var(--primary-text);
+    display: flex;
+    align-items: center;
+}
+
+.a-index:hover{
+    transition: 0.25s ease;
+    background-color: var(--header-hover);
+}
+
+.body-contain{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.text-contain{
+    margin-left: 100px;
+    padding-left: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
+}
+
+h1.container{
+    width: 100%;
+    max-width: 960px;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 180px;
+    display: block;
+    position: relative;
+}
+
+p.container{
+    width: 100%;
+    max-width: 960px;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+.paragraph{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+}
+
+.game-contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+*{
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body{
+    font-family: 'Source Sans Pro Topnav', sans-serif;
+    font-size: 16px;
+    color: var(--primary-text);
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+h1{
+    letter-spacing: 0;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 88px;
+}
+
+canvas{
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 10px 50px;
+}
+
+:root {
+    --background: #121212;
+    --header-bar: #181818;
+    --header-hover: #303030;
+    --primary-text: #ffffff;
+    --secondary-text: #b3b3b3;
+}
