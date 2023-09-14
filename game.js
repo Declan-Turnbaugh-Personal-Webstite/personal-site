@@ -1,22 +1,22 @@
 const canvas = document.getElementById("game");
 const context = canvas.getContext("2d");
 
-const HEIGHT = 400;
-const WIDTH = 400;
-const SCALE = 20;
+const height = 400;
+const width = 400;
+const scale = 20;
 
-window.addEventListener("keydown", (event) => {
-    const direction = event.key.replace("Arrow", "");
+window.addEventListener("keydown", (evt) => {
+    const direction = evt.key.replace("Arrow", "");
     snake.update(direction);
 });
 
 function setup() {
-    canvas.height = HEIGHT;
-    canvas.width = WIDTH;
+    canvas.height = height;
+    canvas.width = width;
     food.createFood();
 
     window.setInterval(() => {
-        context.clearRect(0, 0, WIDTH, HEIGHT);
+        context.clearRect(0, 0, width, height);
         snake.move(snake.xSpeed, snake.ySpeed);
         food.drawFood();
         snake.draw();
@@ -29,36 +29,38 @@ let snake = {
         x: 200,
         y: 200,
     },
-    xSpeed: SCALE,
+    xSpeed: scale,
     ySpeed: 0,
     length: 1,
     draw: () => {
         snake.cells.forEach( cell => {
             context.fillStyle = "#C2F970";
-            context.fillRect( cell.x, cell.y, SCALE, SCALE );
+            context.fillRect( cell.x, cell.y, scale, scale );
         })
     },
+
     update: (direction) => {
         switch (direction) {
-            case "Up":
-                snake.ySpeed = -1 * SCALE;
+            case "w":
+                snake.ySpeed = -1 * scale;
                 snake.xSpeed = 0;
                 break;
-            case "Down":
-                snake.ySpeed = 1 * SCALE;
+            case "s":
+                snake.ySpeed = 1 * scale;
                 snake.xSpeed = 0;
                 break;
-            case "Left":
-                snake.xSpeed = -1 * SCALE;
+            case "a":
+                snake.xSpeed = -1 * scale;
                 snake.ySpeed = 0;
                 break;
 
-            case "Right":
-                snake.xSpeed = 1 * SCALE;
+            case "d":
+                snake.xSpeed = 1 * scale;
                 snake.ySpeed = 0;
                 break;
         }
     },
+
     move: (xDist, yDist) => {
 
         if (snake.cells[0].x == food.position.x && snake.cells[0].y == food.position.y) {
@@ -71,13 +73,13 @@ let snake = {
             snake.moveFirstCell( xDist, yDist )
         }
 
-        },
+    },
 
     moveFirstCell: ( xDist, yDist ) => { 
         // x-position
         if (snake.cells[0].x + xDist < 0) {
-            snake.cells[0].x = WIDTH;
-        } else if (snake.cells[0].x + xDist > WIDTH) {
+            snake.cells[0].x = width;
+        } else if (snake.cells[0].x + xDist > width) {
             snake.cells[0].x = 0;
         } else {
             snake.cells[0].x += xDist;
@@ -85,24 +87,27 @@ let snake = {
 
         // y-position
         if (snake.cells[0].y + yDist < 0) {
-            snake.cells[0].y = HEIGHT;
-        } else if (snake.cells[0].y + yDist > HEIGHT) {
+            snake.cells[0].y = height;
+        } else if (snake.cells[0].y + yDist > height) {
             snake.cells[0].y = 0;
         } else {
             snake.cells[0].y += yDist;
         }
 
     },
+
     shiftCells: length => {
         for (let i = length - 1; i >= 1; i--) {
             snake.cells[i].x = snake.cells[i - 1].x;
             snake.cells[i].y = snake.cells[i - 1].y;
         }        
     },
+
     eat: () => {
         snake.grow();
         food.createFood();
     },
+
     grow: () => {
         snake.cells.push({
             x: snake.cells[snake.length - 1].x,
@@ -117,13 +122,15 @@ let food = {
         x: 0,
         y: 0,
     },
+
     createFood: () => {
-        food.position.x = SCALE * Math.floor(Math.random() * (WIDTH / SCALE));
-        food.position.y = SCALE * Math.floor(Math.random() * (HEIGHT / SCALE));
+        food.position.x = scale * Math.floor(Math.random() * (width / scale));
+        food.position.y = scale * Math.floor(Math.random() * (height / scale));
     },
+
     drawFood: () => {
-        context.fillStyle = "#D3FCD5";
-        context.fillRect(food.position.x, food.position.y, SCALE, SCALE);
+        context.fillStyle = "red";
+        context.fillRect(food.position.x, food.position.y, scale, scale);
     },
 };
 
