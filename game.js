@@ -20,7 +20,7 @@ function setup() {
         snake.move(snake.xSpeed, snake.ySpeed);
         food.drawFood();
         snake.draw();
-    }, 200);
+    }, 150);
 }
 
 let snake = {
@@ -104,6 +104,8 @@ let snake = {
     },
 
     eat: () => {
+        snake.grow();
+        snake.grow();
         snake.grow();
         food.createFood();
     },
